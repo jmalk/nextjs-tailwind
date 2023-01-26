@@ -12,11 +12,11 @@ module.exports = {
       },
       colors: {
         slate: {
-          90: "#f2f4f7",
+          90: "#f2f4f7", // new in-between shade
         },
         teal: {
           600: "#0F8482", // overwrite default
-          900: "#00394e",
+          900: "#00394e", // overwrite default
         },
       },
     },
