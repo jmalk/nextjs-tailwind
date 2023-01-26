@@ -1,91 +1,36 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+const name = "Quaker Oat So Simple Golden Syrup Porridge Sachets 10x36g";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    // Product list
+    <div id="product-list" className="bg-slate-90 h-screen w-screen p-4">
+      {/* Product card */}
+      <div
+        id="product-card"
+        className="bg-white w-52 h-96 flex flex-col rounded shadow-sm"
+      >
+        <div id="image-container" className="w-full p-2 grow">
+          <Image
+            src="/images/quaker-oats.jpg"
+            alt={name}
+            width={278}
+            height={278}
+          />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <h2 className="grow px-2 mb-4 font-medium text-sm text-zinc-800 hover:text-teal-900 cursor-pointer">
+          {name}
+        </h2>
+        <div className="grow p-2">
+          <p className="text-neutral-500 text-sm font-normal">360 grams</p>
+          <p className="text-zinc-800 text-base font-semibold">£3.10</p>
         </div>
+        <button className="bg-teal-600 text-white grow flex justify-between items-center p-2 rounded-b cursor-pointer font-medium text-sm">
+          <span>Add to basket</span>
+          <span className="text-xl">+</span>
+        </button>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
